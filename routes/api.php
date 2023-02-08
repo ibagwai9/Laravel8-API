@@ -34,11 +34,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route::post('upload',[FileUploadController::class,'userInfo']);
 
-Route::post('upload', function (Request $req) {
-    $upload_path = public_path('upload');
-    $generated_new_name =  time() . '.' .$req->file('file')->getClientOriginalName();
-    $req->file->move($upload_path, $generated_new_name);
-});//[App\Http\Controllers\Api\FileUploadController::class,'uploadFile']);
+Route::post('upload',[FileUploadController::class,'upload']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
