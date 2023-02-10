@@ -15,3 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 // Auth::routes();
+
+Route::get('downloads/{url}', function($url){
+    $file= public_path().'/upload/'.$url;
+    $headers = [
+        'Content-Type' => 'application/pdf',
+     ];
+    return response()->download($file, 'filename.pdf', $headers);
+});

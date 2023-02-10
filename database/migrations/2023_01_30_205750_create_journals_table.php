@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('publisher')->nullable();
             $table->text('publication_date')->nullable();
             $table->text('publisher_address')->nullable();
+            $table->text('url')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->text('status')->nullable();
             $table->timestamps();
